@@ -1,0 +1,164 @@
+/*** generales ***/
+.to-left {
+	float: left;
+}
+.to-right {
+	float: right;
+}
+.color-white {
+	color: #fff;
+}
+.color-black {
+	color: #000;
+}
+.color-link {
+	color: #fff;
+}
+.bold-text {
+	font-weight: bold;
+}
+
+form {
+	margin-top: 100px;
+	/*background-color: #000;*/
+	width: auto;
+	padding: 30px;
+}
+
+input {
+	margin-bottom: 10px;
+	padding: 5px;
+	background-color: #006666;
+	border: none;
+	border-radius: 10px;
+}
+
+button {
+	margin-bottom: 10px;
+	padding: 5px;
+	background-color: #006666;
+	border: none;
+	border-radius: 10px;
+}
+
+table, tr, td {
+	width: auto;
+	display: contents;
+	padding: 0;
+	margin: 0;
+}
+
+/*******************/
+/*** Page index  ***/
+/*******************/
+body {
+	background-color: #000000;
+	/*********#00cc99**********/
+}
+
+header {
+	padding: 10px;
+}
+
+.logo {
+	background-color: #669999;
+	margin-left: 20px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 5px solid #006666;
+}
+
+.navigate {
+	padding: 5px;
+	margin-right: 20px;
+}
+
+.username input,
+.pw input  
+{ 
+	width: 350px;
+	text-align: center;
+}
+
+.forget {
+	margin-bottom: 10px;
+}
+
+.forget a:hover {
+	color: #006666;
+	font-weight: bold;
+}
+
+.ok input {
+	padding: 10px;
+}
+
+.ok input:hover {
+	background-color: #006666;
+}
+
+footer {
+	margin-top: 300px;
+	display: block;
+}
+
+
+/*************************/
+/*** Page inscription  ***/
+/*************************/
+
+table input {
+	margin: 0;
+	padding: 0;
+}
+
+table tr input {
+	width: 400px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+table td {
+	border-radius: 15px;
+	text-align: center;
+	padding: 5px;
+}
+
+table td:first-child {
+	color:  #fff;
+}
+
+table tr:hover {
+	padding: 10px;
+	background-color:  #006666;
+}
+
+.inscrire-id-label {
+	background-color:  #006666;
+}
+
+.inscrire-Button input {
+	background-color:  #005555;
+	padding: 10px;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-left: 200px;
+}
+
+.inscrire-Button input:hover {
+	background-color:  #000;
+	color: #fff;
+}
+
+
+.inscripFooter {
+	margin-top: 50px;
+	display: block;
+}
+
+.systemId{
+	margin-top:150px;
+	font-size: 3em;
+	color: #006666;
+}

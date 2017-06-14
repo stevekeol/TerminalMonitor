@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>医电园</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/reset.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/mystyle.css">
+	<script src="/javascripts/login.js"></script>
+	<script src='/javascripts/jquery.min.js'></script>
+</head>
+
+<body>
+<header>
+	<div class="logo to-left">
+		<a href="http://www.ydytech.net" class="bold-text">
+			<b class="color-white">YDY</b><span class="color-black">tech</span>
+		</a>
+	</div>
+	<div class="navigate to-right ">
+		<a href="/login" class="color-white bold-text">Login In</a>
+	</div>
+</header>
+
+<section>
+	<center>
+	<div class="color-white systemId">
+		<h>浙医XX注册系统 V1.0</h>
+	</div>
+		<form method="post" id="loginupForm" enctype='application/json'>
+			<table cellspacing="10">
+				<tr class="inscrire-id-label">
+					<td>
+						<span class="">ID</span>
+					</td>
+					<td>
+						<div class="inscrire-label">
+							<input class="inscrire-id-texte" type="text" value="YDY00001001" disabled></input>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="inscrire-nom-label">
+					<td>
+						<span class="">Account</span>
+					</td>
+					<td>
+						<div class="inscrire-nom">
+							<input id="account" class="inscrire-nom-texte" type="text" value="stevekeol-test"></input>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="inscrire-pw-label">
+					<td>
+						<span class="">Password</span>
+					</td>
+					<td>
+						<div class="inscrire-pw">
+							<input id="password" class="inscrire-pw-texte" type="password" value="zhangjie0812"></input>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="inscrire-conf-pw-label">
+					<td>
+						<span class="">Repassword</span>
+					</td>
+					<td>
+						<div class="inscrire-conf-pw">
+							<input id="repassword" class="inscrire-pw-texte" type="password" value="zhangjie0812"></input>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="inscrire-phone-label">
+					<td>
+						<span class="">Phone</span>
+					</td>
+					<td>
+						<div class="inscrire-phone">
+							<input id="phone" class="inscrire-phone-texte" type="text" value="15258800906"></input>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<div class="ok">
+				<input class="color-white" type="submit" value="Submit"></input>
+			</div>
+		</form>
+	</center>
+</section>
+<script>
+(function($){
+        $(document).ready(function () {
+            $('#loginupForm').on('submit', (function (e) {
+                e.preventDefault();
+
+                var formData = {};
+                    formData.account = $("#account").val();
+                    formData.password = $("#password").val();
+                    formData.repassword =  $("#repassword").val();
+                    formData.phone =  $("#phone").val();
+
+	                if(formData.password === formData.repassword){
+	                	alert('pw & repw ok!');
+		                $.ajax({
+		                    type: 'POST',
+		                    url: '/loginup',
+		                    data: formData,
+				        	success: function (data) {
+								if (data['code'] == '00'){
+									alert("internet or database access error...");
+									window.location.href = 'http://www.baidu.com';	
+								}else if(data['code'] == '01'){
+									alert("account existed!"); 
+									res.redirect('/loginup');
+								}else if(data['code'] == '02'){
+									alert("create & store success!");	
+									res.redirect('/login');
+								}
+				        	},
+				        	error: function (data) {
+				        		alert("error!");
+				        	}
+				        });
+	            	}else{
+	            		alert('等等，两次密码不匹配！');
+	            	}
+            }));
+        });
+})(jQuery);
+</script>
+</body>
+</html>
